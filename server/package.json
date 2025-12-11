@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prestart": "npm run build",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "build": "tsc",
+    "migrate:campaign": "ts-node scripts/migrateCampaign.ts",
+    "erd": "npm run build && sequelize-erd --source ./dist/erd-source.js --destination ./erd.svg"
   },
   "keywords": [],
   "author": "",
