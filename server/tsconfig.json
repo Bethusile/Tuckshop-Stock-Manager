@@ -1,0 +1,40 @@
+{
+    "compilerOptions": {
+        /* Basic Options */
+        "target": "es2020",                             /* Specify ECMAScript target version */
+        "module": "commonjs",                           /* Specify module code generation */
+        "rootDir": "./src",                             /* Specify the root directory of input files */
+        "outDir": "./dist",                             /* Specify the output directory for compiled JavaScript */
+        
+        /* Strictness and Interop */
+        "strict": true,                                 /* Enable all strict type-checking options */
+        "esModuleInterop": true,                        /* CRITICAL FIX: Allows CJS/ESM interop for 'express' */
+        "skipLibCheck": true,                           /* Skip type checking of declaration files */
+        "forceConsistentCasingInFileNames": true,       /* Disallow inconsistently-cased references to the same file. */
+        
+        /* Module Resolution */
+        "moduleResolution": "node",                     /* Resolve modules using Node.js style */
+        "resolveJsonModule": true,                      /* Include modules imported from .json files */
+        
+        /* Debugging and Source Maps */
+        "sourceMap": true,                              /* Generate corresponding .map files */
+        "inlineSources": true,                          /* Emit the source alongside the sourcemaps */
+        
+        /* Project Options */
+        "baseUrl": ".",                                 /* Base directory to resolve non-relative module names */
+        "paths": {
+            /* Map paths for cleaner imports (optional, but good practice) */
+            "@db/*": ["src/db/*"],
+            "@handler/*": ["src/handler/*"],
+            "@middleware/*": ["src/middleware/*"]
+        }
+    },
+    "include": [
+        "src/**/*.ts",                                  /* Include all TypeScript files in the src directory */
+        "routes/**/*.ts"                                /* Include files in the 'routes' directory */
+    ],
+    "exclude": [
+        "node_modules",                                 /* Exclude node_modules */
+        "dist"                                          /* Exclude compiled output */
+    ]
+}
