@@ -1,0 +1,34 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm run build",
+    "start": "node dist/index.js",
+    "dev": "ts-node server/src/index.ts",
+    "dev:server": "ts-node server/src/index.ts",
+    "dev:client": "npm run dev --prefix client",
+    "dev:all": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "tsc",
+    "migrate:campaign": "ts-node scripts/migrateCampaign.ts",
+    "erd": "npm run build && sequelize-erd --source ./dist/erd-source.js --destination ./erd.svg"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.0.0",
+    "@types/pg": "^8.16.0",
+    "concurrently": "^9.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
