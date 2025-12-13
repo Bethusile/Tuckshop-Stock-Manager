@@ -4,7 +4,7 @@ import * as dotenv from 'dotenv';
 import { QueryResult } from 'pg';
 
 // Load environment variables from the server/.env file
-dotenv.config({ path: '../server/.env' }); // Ensure the path is correct relative to the compiled file
+dotenv.config({ path: 'server/.env' }); // Ensure the path is correct relative to the compiled file
 
 // --- Interfaces for Type Safety ---
 
