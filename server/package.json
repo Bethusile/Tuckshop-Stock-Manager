@@ -4,13 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm run build",
-    "start": "node dist/index.js",
-    "dev": "ts-node src/index.ts",
-    "build": "tsc",
-    "migrate:campaign": "ts-node scripts/migrateCampaign.ts",
-    "erd": "npm run build && sequelize-erd --source ./dist/erd-source.js --destination ./erd.svg"
-  },
+  "build": "tsc",
+  "start": "node dist/index.js",
+  "dev": "ts-node src/index.js",
+  "migrate": "node-pg-migrate",
+  "migrate:create": "node-pg-migrate create"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -18,6 +17,7 @@
   "dependencies": {
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
+    "node-pg-migrate": "^8.0.4",
     "pg": "^8.16.3"
   },
   "devDependencies": {
